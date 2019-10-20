@@ -5,8 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.is;
+
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.hasValue;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MealServiceTest {
@@ -100,6 +103,26 @@ class MealServiceTest {
     }
 
     @Test
+    void shouldBeAbelToRemoveMealFromMealService(){
+        //given
+        Meal meal = new Meal(1,"Pizza", 10);
+        mealService.addMeal(meal);
+        //when
+        mealService.delete(meal);
+        //then
+        assertThat(mealService.getAllMeals(), not(contains(meal)));
+    }
+
+    @Test
+    void shouldBeAbleToUpdateMealName(){
+        //given
+        Meal meal = new Meal(1,"Pizza",10);
+        mealService.addMeal(meal);
+        //when
+        mealService.updateMealName(1,"burger");
+        //then
+        assertThat(meal.getMealName(), is("burger"));
+    }
 
 
 }

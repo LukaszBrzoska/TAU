@@ -2,6 +2,7 @@ package pl.pjwstk.tau;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 public class MealService {
@@ -25,7 +26,7 @@ public class MealService {
         for (Meal meal : meals) {
             if (meal.getId() == id)
                 return meals.stream()
-                        .filter(meal1 -> meal.getId() == id )
+                        .filter(meal1 -> meal.getId() == id)
                         .collect(Collectors.toList());
         }
         throw new IllegalArgumentException("No find that id");
@@ -41,5 +42,17 @@ public class MealService {
         return meals.stream()
                 .filter(meal -> meal.getPrice() == price)
                 .collect(Collectors.toList());
+    }
+
+    public List<Meal> updateMealName(int id, String mealName) {
+        for (Meal meal : meals) {
+            if (meal.getId() == id) {
+                meal.setMealName(mealName);
+                return meals.stream()
+                        .filter(meal1 -> meal.getId() == id)
+                        .collect(Collectors.toList());
+            }
+        }
+        throw new NoSuchElementException("No meal with that id");
     }
 }

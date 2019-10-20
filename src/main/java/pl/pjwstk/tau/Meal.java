@@ -1,5 +1,7 @@
 package pl.pjwstk.tau;
 
+import java.util.Objects;
+
 public class Meal {
 
     private int id;
@@ -41,4 +43,27 @@ public class Meal {
         this.price = price;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Meal meal = (Meal) o;
+        return id == meal.id &&
+                Double.compare(meal.price, price) == 0 &&
+                Objects.equals(mealName, meal.mealName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, mealName, price);
+    }
+
+    @Override
+    public String toString() {
+        return "Meal{" +
+                "id=" + id +
+                ", mealName='" + mealName + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
