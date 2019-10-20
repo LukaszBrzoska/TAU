@@ -1,6 +1,5 @@
-package pl.pjwstk.tau;
+import static org.junit.jupiter.api.Assertions.*;
 
-
-public class MealTest  {
+class MealTest {
 
 }
