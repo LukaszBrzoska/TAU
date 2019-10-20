@@ -55,4 +55,17 @@ public class MealService {
         }
         throw new NoSuchElementException("No meal with that id");
     }
+
+    public List<Meal> updateMeal(int id, String mealName, double price) {
+        for (Meal meal : meals) {
+            if (meal.getId() == id) {
+                meal.setMealName(mealName);
+                meal.setPrice(price);
+                return meals.stream()
+                        .filter(meal1 -> meal.getId() == id)
+                        .collect(Collectors.toList());
+            }
+        }
+        throw new IllegalArgumentException("No meal to update with that id");
+    }
 }

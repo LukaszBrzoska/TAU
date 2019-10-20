@@ -4,12 +4,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 
-import static org.hamcrest.CoreMatchers.*;
+
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.Matchers.hasValue;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MealServiceTest {
@@ -93,9 +93,9 @@ class MealServiceTest {
     }
 
     @Test
-    void shouldBeThrownExceptionWhenTryGetNoExistMeal(){
+    void shouldBeThrownExceptionWhenTryGetNoExistMeal() {
         //given
-        Meal meal = new Meal(1,"Pizza", 10);
+        Meal meal = new Meal(1, "Pizza", 10);
         //when
         mealService.addMeal(meal);
         //then
@@ -103,9 +103,9 @@ class MealServiceTest {
     }
 
     @Test
-    void shouldBeAbelToRemoveMealFromMealService(){
+    void shouldBeAbelToRemoveMealFromMealService() {
         //given
-        Meal meal = new Meal(1,"Pizza", 10);
+        Meal meal = new Meal(1, "Pizza", 10);
         mealService.addMeal(meal);
         //when
         mealService.delete(meal);
@@ -114,14 +114,26 @@ class MealServiceTest {
     }
 
     @Test
-    void shouldBeAbleToUpdateMealName(){
+    void shouldBeAbleToUpdateMealName() {
         //given
-        Meal meal = new Meal(1,"Pizza",10);
+        Meal meal = new Meal(1, "Pizza", 10);
         mealService.addMeal(meal);
         //when
-        mealService.updateMealName(1,"burger");
+        mealService.updateMealName(1, "burger");
         //then
         assertThat(meal.getMealName(), is("burger"));
+
+
+    }
+
+    @Test
+    void shouldBeThrownExceptionWhenTryUpdateNoExistMeal() {
+        assertThrows(NoSuchElementException.class, () -> mealService.updateMealName(6, "Pizza"));
+    }
+
+    @Test
+    void shouldBeThrownExceptionWhenTryUpdateNoExistMealPrice() {
+        assertThrows(IllegalArgumentException.class, () -> mealService.updateMeal(6, "burger", 10));
     }
 
 
