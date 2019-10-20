@@ -1,3 +1,3 @@
 Testowanie_Automatyczne
 
-https://travis-ci.com/LukaszBrzoska/TAU.svg?branch=master
+[![Build Status](https://travis-ci.com/LukaszBrzoska/TAU.svg?branch=master)](https://travis-ci.org/LukaszBrzoska/TAU)
