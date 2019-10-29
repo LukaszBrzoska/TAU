@@ -1,29 +1,36 @@
-package pl.pjwstk.tau;
+package pl.pjwstk.tau.model;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Meal {
 
-    private int id;
+    private Long id;
     private String mealName;
     private double price;
+    private LocalDateTime creationTime;
+    private LocalDateTime updatedTime;
+    private LocalDateTime lastReadTime;
+    private boolean saveTime;
 
 
     public Meal() {
     }
 
-    public Meal(int id, String mealName, double price) {
+    public Meal(long id, String mealName) {
         this.id = id;
         this.mealName = mealName;
         this.price = price;
-
+        this.creationTime = LocalDateTime.now();
+        this.updatedTime = LocalDateTime.now();
+        this.saveTime = true;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -43,27 +50,35 @@ public class Meal {
         this.price = price;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Meal meal = (Meal) o;
-        return id == meal.id &&
-                Double.compare(meal.price, price) == 0 &&
-                Objects.equals(mealName, meal.mealName);
+    public LocalDateTime getCreationTime() {
+        return creationTime;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, mealName, price);
+    public void setCreationTime(LocalDateTime creationTime) {
+        this.creationTime = creationTime;
     }
 
-    @Override
-    public String toString() {
-        return "Meal{" +
-                "id=" + id +
-                ", mealName='" + mealName + '\'' +
-                ", price=" + price +
-                '}';
+    public LocalDateTime getUpdatedTime() {
+        return updatedTime;
+    }
+
+    public void setUpdatedTime(LocalDateTime updatedTime) {
+        this.updatedTime = updatedTime;
+    }
+
+    public LocalDateTime getLastReadTime() {
+        return lastReadTime;
+    }
+
+    public void setLastReadTime(LocalDateTime lastReadTime) {
+        this.lastReadTime = lastReadTime;
+    }
+
+    public boolean isSaveTime() {
+        return saveTime;
+    }
+
+    public void setSaveTime(boolean saveTime) {
+        this.saveTime = saveTime;
     }
 }
