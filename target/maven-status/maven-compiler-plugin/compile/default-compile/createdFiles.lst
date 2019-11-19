@@ -1,5 +1,4 @@
 pl\pjwstk\tau\model\MealList.class
 pl\pjwstk\tau\service\MealListService.class
 pl\pjwstk\tau\model\Meal.class
-pl\pjwstk\tau\model\MealTimeDTO.class
 pl\pjwstk\tau\repository\MealListRepository.class

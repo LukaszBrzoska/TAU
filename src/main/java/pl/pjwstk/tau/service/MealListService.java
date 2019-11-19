@@ -18,8 +18,9 @@ public class MealListService {
         if (meal == null) throw new IllegalArgumentException("Object is null");
             if (meal.isSaveTime()){
         MealListRepository.getInstance().collectionAccess().add(meal);
-        meal.setCreationTime(LocalDateTime.now());}
-            MealListRepository.getInstance().collectionAccess().add(meal);
+        meal.setCreationTime(LocalDateTime.now());} else {
+                MealListRepository.getInstance().collectionAccess().add(meal);
+            }
         return true;
     }
 
