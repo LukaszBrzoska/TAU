@@ -1,2 +1,5 @@
-C:\Users\£ukasz\workspace\TAU\src\main\java\pl\pjwstk\tau\Meal.java
-C:\Users\£ukasz\workspace\TAU\src\main\java\pl\pjwstk\tau\MealService.java
+C:\Users\£ukasz\workspace\TAU\src\main\java\pl\pjwstk\tau\model\Meal.java
+C:\Users\£ukasz\workspace\TAU\src\main\java\pl\pjwstk\tau\model\MealTimeDTO.java
+C:\Users\£ukasz\workspace\TAU\src\main\java\pl\pjwstk\tau\service\MealListService.java
+C:\Users\£ukasz\workspace\TAU\src\main\java\pl\pjwstk\tau\repository\MealListRepository.java
+C:\Users\£ukasz\workspace\TAU\src\main\java\pl\pjwstk\tau\model\MealList.java

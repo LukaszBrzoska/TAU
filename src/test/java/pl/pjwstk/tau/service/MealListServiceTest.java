@@ -3,11 +3,10 @@ package pl.pjwstk.tau.service;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 import pl.pjwstk.tau.model.Meal;
-import pl.pjwstk.tau.model.MealList;
-import pl.pjwstk.tau.model.MealTimeDTO;
 import pl.pjwstk.tau.repository.MealListRepository;
 
 import java.time.LocalDateTime;
@@ -18,12 +17,20 @@ import java.util.NoSuchElementException;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 class MealListServiceTest {
 
     private MealListRepository repository = MealListRepository.getInstance();
     private MealListService mealListService = new MealListService();
 
+
+    @Mock
+    private MealListService mealListServiceMock;
+    @Mock
+    private Meal mealMock;
 
     @BeforeEach
     public void initializeList() {
@@ -121,35 +128,46 @@ class MealListServiceTest {
         //then
         assertThrows(NoSuchElementException.class, () -> mealListService.updateMeal(35, meal));
 
-
     }
 
     @Test
-    void readDataShouldBeEqualToLocalDateTimeNowWhenGetMealById() {
+    void readDataShouldBeEqualToLocalDateTimeWhenGetMealById() {
         //given
+        LocalDateTime localDateTime = LocalDateTime.now();
         //when
+        when(mealListServiceMock.getMealById(1)).thenReturn(mealMock);
+        when(mealListServiceMock.getMealById(1).getLastReadTime()).thenReturn(localDateTime);
         //then
-        assertThat(mealListService.getMealById(1).getLastReadTime(), equalTo(LocalDateTime.now()));
+        //  assertThat(mealListServiceMock.getMealById(1).getLastReadTime(), equalTo(localDateTime));
+        assertEquals(mealListServiceMock.getMealById(1).getLastReadTime(), localDateTime);
+
     }
 
     @Test
     void dateShouldBeAddedWhenAddNewMeal() {
         //given
         Meal meal = new Meal(99, "Onion Rings");
+        LocalDateTime localDateTime = LocalDateTime.now();
         //when
         mealListService.addMeal(meal);
+        when(mealListServiceMock.getMealById(99)).thenReturn(mealMock);
+        when(mealListServiceMock.getMealById(99).getLastReadTime()).thenReturn(localDateTime);
         //then
-        assertThat(mealListService.getMealById(99).getLastReadTime(), equalTo(LocalDateTime.now()));
+        assertThat(mealListServiceMock.getMealById(99).getLastReadTime(), equalTo(localDateTime));
     }
 
     @Test
     void dateShouldBeUpdateWhenUpdatingMeal() {
         //given
         Meal meal = new Meal(30, "Onion Rings");
+        LocalDateTime localDateTime = LocalDateTime.now();
+        LocalDateTime localDateTime1 = LocalDateTime.now();
         //when
         mealListService.updateMeal(1, meal);
+        when(mealListServiceMock.getMealById(1)).thenReturn(mealMock);
+        when(mealListServiceMock.getMealById(1).getUpdatedTime()).thenReturn(localDateTime);
         //then
-        assertThat(mealListService.getMealById(1).getUpdatedTime(), is(not(meal.getUpdatedTime())));
+        assertThat(mealListServiceMock.getMealById(1).getUpdatedTime(), is(localDateTime1));
     }
 
 

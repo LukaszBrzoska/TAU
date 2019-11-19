@@ -1,8 +1,6 @@
 package pl.pjwstk.tau.service;
 
 import pl.pjwstk.tau.model.Meal;
-import pl.pjwstk.tau.model.MealList;
-import pl.pjwstk.tau.model.MealTimeDTO;
 import pl.pjwstk.tau.repository.MealListRepository;
 
 import java.time.LocalDateTime;
@@ -26,6 +24,7 @@ public class MealListService {
 
     public Meal getMealById(long id) {
         if (MealListRepository.getInstance().isExistInRepositoryById(id)) {
+
             Optional<Meal> optionalMeal = MealListRepository.getInstance().getMealById(id);
             if (optionalMeal.isPresent()) {
                 Meal meal = optionalMeal.get();
@@ -70,7 +69,4 @@ public class MealListService {
         throw new NoSuchElementException("Element with this id doesn't exist");
     }
 
-    public MealTimeDTO getTimeById(long id){
-        return new MealTimeDTO().create(getMealById(id));
-    }
 }

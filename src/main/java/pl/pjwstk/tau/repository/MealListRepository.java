@@ -38,7 +38,7 @@ public class MealListRepository {
                 .findFirst();
     }
 
-    public boolean isExistInRepositoryById(final long id) {
+    public boolean isExistInRepositoryById(final Long id) {
         return meals.stream().anyMatch(meal -> meal.getId().equals(id));
     }
 }

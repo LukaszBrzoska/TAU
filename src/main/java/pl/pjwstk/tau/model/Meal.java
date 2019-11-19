@@ -22,7 +22,6 @@ public class Meal {
         this.mealName = mealName;
         this.price = price;
         this.creationTime = LocalDateTime.now();
-        this.updatedTime = LocalDateTime.now();
         this.saveTime = true;
     }
 
