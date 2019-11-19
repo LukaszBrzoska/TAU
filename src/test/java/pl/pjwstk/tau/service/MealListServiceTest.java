@@ -161,13 +161,12 @@ class MealListServiceTest {
         //given
         Meal meal = new Meal(30, "Onion Rings");
         LocalDateTime localDateTime = LocalDateTime.now();
-        LocalDateTime localDateTime1 = LocalDateTime.now();
-        //when
+             //when
         mealListService.updateMeal(1, meal);
         when(mealListServiceMock.getMealById(1)).thenReturn(mealMock);
         when(mealListServiceMock.getMealById(1).getUpdatedTime()).thenReturn(localDateTime);
         //then
-        assertThat(mealListServiceMock.getMealById(1).getUpdatedTime(), is(localDateTime1));
+        assertThat(mealListServiceMock.getMealById(1).getUpdatedTime(), is(localDateTime));
     }
 
 
