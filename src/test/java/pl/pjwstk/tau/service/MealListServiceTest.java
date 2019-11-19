@@ -17,6 +17,7 @@ import java.util.NoSuchElementException;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -118,6 +119,7 @@ class MealListServiceTest {
 
     }
 
+
     @Test
     void updateMealShouldThrowNoSuchElementException() {
         //given
@@ -168,5 +170,19 @@ class MealListServiceTest {
         //then
         assertThat(mealListServiceMock.getMealById(1).getUpdatedTime(), is(localDateTime));
     }
+    @Test
+    void shouldBeAbleToDisableCreationAndUpdateAndLastReadTimeOptions() {
+        //given
+        Meal meal = new Meal(10, "MealWithNoDataValues");
+        meal.setSaveTime(false);
+        //when
+        mealListService.addMeal(meal);
+        mealListService.getMealById(10);
+        //then
+        assertThat(mealListService.getMealById(10).getCreationTime(), is(nullValue()));
+        assertThat(mealListService.getMealById(10).getLastReadTime(), is(nullValue()));
+        assertThat(mealListService.getMealById(10).getUpdatedTime(), is(nullValue()));
+    }
+
 
 }
