@@ -151,9 +151,9 @@ class MealListServiceTest {
         //when
         mealListService.addMeal(meal);
         when(mealListServiceMock.getMealById(99)).thenReturn(mealMock);
-        when(mealListServiceMock.getMealById(99).getLastReadTime()).thenReturn(localDateTime);
+        when(mealListServiceMock.getMealById(99).getCreationTime()).thenReturn(localDateTime);
         //then
-        assertThat(mealListServiceMock.getMealById(99).getLastReadTime(), equalTo(localDateTime));
+        assertThat(mealListServiceMock.getMealById(99).getCreationTime(), equalTo(localDateTime));
     }
 
     @Test
@@ -168,6 +168,5 @@ class MealListServiceTest {
         //then
         assertThat(mealListServiceMock.getMealById(1).getUpdatedTime(), is(localDateTime));
     }
-
 
 }
