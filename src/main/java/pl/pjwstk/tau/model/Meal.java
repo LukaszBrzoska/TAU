@@ -1,7 +1,6 @@
 package pl.pjwstk.tau.model;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 public class Meal {
 
@@ -20,8 +19,13 @@ public class Meal {
     public Meal(long id, String mealName) {
         this.id = id;
         this.mealName = mealName;
+        this.saveTime = true;
+    }
+
+    public Meal(long id, String mealName, double price) {
+        this.id = id;
+        this.mealName = mealName;
         this.price = price;
-      //  this.creationTime = LocalDateTime.now();
         this.saveTime = true;
     }
 
@@ -79,5 +83,18 @@ public class Meal {
 
     public void setSaveTime(boolean saveTime) {
         this.saveTime = saveTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Meal{" +
+                "id=" + id +
+                ", mealName='" + mealName + '\'' +
+                ", price=" + price +
+                ", creationTime=" + creationTime +
+                ", updatedTime=" + updatedTime +
+                ", lastReadTime=" + lastReadTime +
+                ", saveTime=" + saveTime +
+                '}';
     }
 }

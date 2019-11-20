@@ -17,8 +17,6 @@ import java.util.NoSuchElementException;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.isNull;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -67,6 +65,14 @@ class MealListServiceTest {
         //then
         assertThat(meal.getMealName(), is("Hamburger"));
 
+    }
+
+    @Test
+    void getMealByName(){
+        //given
+        //when
+        //then
+        assertThat(mealListService.getMealByName("burger"), hasSize(2));
     }
 
     @Test

@@ -1,6 +1,7 @@
 package pl.pjwstk.tau.service;
 
 import pl.pjwstk.tau.model.Meal;
+import pl.pjwstk.tau.model.MealList;
 import pl.pjwstk.tau.repository.MealListRepository;
 
 import java.time.LocalDateTime;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class MealListService {
 
@@ -16,11 +18,12 @@ public class MealListService {
 
     public boolean addMeal(Meal meal) {
         if (meal == null) throw new IllegalArgumentException("Object is null");
-            if (meal.isSaveTime()){
-        MealListRepository.getInstance().collectionAccess().add(meal);
-        meal.setCreationTime(LocalDateTime.now());} else {
-                MealListRepository.getInstance().collectionAccess().add(meal);
-            }
+        if (meal.isSaveTime()) {
+            MealListRepository.getInstance().collectionAccess().add(meal);
+            meal.setCreationTime(LocalDateTime.now());
+        } else {
+            MealListRepository.getInstance().collectionAccess().add(meal);
+        }
         return true;
     }
 
@@ -39,27 +42,27 @@ public class MealListService {
         throw new NoSuchElementException("Element with this id doesn't exist");
     }
 
-    public List<Meal> getAllMeals(){
+    public List<Meal> getAllMeals() {
         return new ArrayList<>(MealListRepository.getInstance().collectionAccess());
     }
 
-    public boolean deleteMealById(long id){
-        if (MealListRepository.getInstance().isExistInRepositoryById(id)){
+    public boolean deleteMealById(long id) {
+        if (MealListRepository.getInstance().isExistInRepositoryById(id)) {
             MealListRepository.getInstance().collectionAccess().remove(getMealById(id));
             return true;
         }
         return false;
     }
 
-    public Meal updateMeal(long id , Meal meal){
-        if (MealListRepository.getInstance().isExistInRepositoryById(id)){
+    public Meal updateMeal(long id, Meal meal) {
+        if (MealListRepository.getInstance().isExistInRepositoryById(id)) {
             Meal mealToUpdate = getMealById(id);
 
             mealToUpdate.setMealName(meal.getMealName());
             mealToUpdate.setPrice(meal.getPrice());
             mealToUpdate.setSaveTime(meal.isSaveTime());
 
-            if (meal.isSaveTime()){
+            if (meal.isSaveTime()) {
                 mealToUpdate.setUpdatedTime(LocalDateTime.now());
                 mealToUpdate.setLastReadTime(LocalDateTime.now());
             }
@@ -69,6 +72,34 @@ public class MealListService {
             return mealToUpdate;
         }
         throw new NoSuchElementException("Element with this id doesn't exist");
+    }
+
+    public List<Meal> getMealByName(String mealName) {
+
+        if (mealName == null) {
+            throw new IllegalArgumentException("mealName cant be null");
+
+        }
+        return MealListRepository.getInstance().collectionAccess().stream()
+                .filter(meal -> meal.getMealName().contains(mealName))
+                .collect(Collectors.toList());
+    }
+
+    public List<Meal> getMealByPrice(double price) {
+        return MealListRepository.getInstance().collectionAccess().stream()
+                .filter(meal -> meal.getPrice() == price).collect(Collectors.toList());
+    }
+
+    public boolean deleteMealByName(String mealName) {
+        if (mealName == null) {
+            throw new IllegalArgumentException("mealName cant by null");
+        }
+        List<Meal> mealsToDelete = getMealByName(mealName);
+        if (mealsToDelete.size() == 0) {
+            return false;
+        }
+        mealsToDelete.forEach(m -> deleteMealById(m.getId()));
+        return true;
     }
 
 }
