@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: pl.pjwstk.tau.service.MealListServiceTest
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.28 s - in pl.pjwstk.tau.service.MealListServiceTest

@@ -1,0 +1,72 @@
+
+(bdd/jbehave/meal_story_test.story)
+Scenario: Get meals by regexp
+Given initialize meals list (PENDING)
+When user wanna meals with burger in name (PENDING)
+Then user get all meals with burger in name (PENDING)
+@Given("initialize meals list")
+@Pending
+public void givenInitializeMealsList() {
+  // PENDING
+}
+
+@When("user wanna meals with burger in name")
+@Pending
+public void whenUserWannaMealsWithBurgerInName() {
+  // PENDING
+}
+
+@Then("user get all meals with burger in name")
+@Pending
+public void thenUserGetAllMealsWithBurgerInName() {
+  // PENDING
+}
+
+
+Scenario: Get meals by price
+Given initialize meals list (PENDING)
+When user wanna meals with price 10 (PENDING)
+Then user get all meals with price 10 (PENDING)
+@Given("initialize meals list")
+@Pending
+public void givenInitializeMealsList() {
+  // PENDING
+}
+
+@When("user wanna meals with price 10")
+@Pending
+public void whenUserWannaMealsWithPrice10() {
+  // PENDING
+}
+
+@Then("user get all meals with price 10")
+@Pending
+public void thenUserGetAllMealsWithPrice10() {
+  // PENDING
+}
+
+
+Scenario: Delete meal by regexp
+Given add meals to list: (PENDING)
+When user wanna delete meals with burger (PENDING)
+Then user remove all meals contains burger (PENDING)
+@Given("add meals to list:")
+@Pending
+public void givenAddMealsToList() {
+  // PENDING
+}
+
+@When("user wanna delete meals with burger")
+@Pending
+public void whenUserWannaDeleteMealsWithBurger() {
+  // PENDING
+}
+
+@Then("user remove all meals contains burger")
+@Pending
+public void thenUserRemoveAllMealsContainsBurger() {
+  // PENDING
+}
+
+
+
