@@ -52,7 +52,7 @@ public class SeleniumTest {
         driver.findElement(By.linkText("Sign in")).click();
         driver.findElement(By.id("email_create")).click();
         driver.findElement(By.id("email_create")).clear();
-        driver.findElement(By.id("email_create")).sendKeys("testselenium-10@wp.pl");
+        driver.findElement(By.id("email_create")).sendKeys("testselenium-15@wp.pl");
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Email address'])[1]/following::span[1]")).click();
         driver.findElement(By.id("id_gender1")).click();
         driver.findElement(By.id("customer_firstname")).click();
