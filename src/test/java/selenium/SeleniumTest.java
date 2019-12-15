@@ -6,7 +6,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -52,7 +51,7 @@ public class SeleniumTest {
         driver.findElement(By.linkText("Sign in")).click();
         driver.findElement(By.id("email_create")).click();
         driver.findElement(By.id("email_create")).clear();
-        driver.findElement(By.id("email_create")).sendKeys("testselenium-15@wp.pl");
+        driver.findElement(By.id("email_create")).sendKeys("testselenium-40@wp.pl");
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Email address'])[1]/following::span[1]")).click();
         driver.findElement(By.id("id_gender1")).click();
         driver.findElement(By.id("customer_firstname")).click();
@@ -139,11 +138,18 @@ public class SeleniumTest {
     }
 
     @Test
-    void testVariousScreenSizes() {
+        void testVariousScreenSizes() {
         for (Dimension d : screenDimensionsList) {
             driver.manage().window().setSize(d);
-            driver.findElement(By.xpath("//img[@alt='My Store']")).click();
-            driver.findElement(By.id("search_query_top")).click();
+            driver.findElement(By.linkText("Sign in")).click();
+            driver.findElement(By.id("email")).click();
+            driver.findElement(By.id("email")).clear();
+            driver.findElement(By.id("email")).sendKeys("testselenium-1@wp.pl");
+            driver.findElement(By.id("passwd")).clear();
+            driver.findElement(By.id("passwd")).sendKeys("testselenium");
+            driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Forgot your password?'])[1]/following::span[1]")).click();
+            driver.findElement(By.linkText("Sign out")).click();
+
             try{
                 Thread.sleep(2000);
             }catch(Exception e){
