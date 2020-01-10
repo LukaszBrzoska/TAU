@@ -1,6 +1,6 @@
-#Lab6
+# Lab6
 
-##How to run
+## How to run
 First step:  
 ```
 javac Main.java
