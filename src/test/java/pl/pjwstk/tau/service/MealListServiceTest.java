@@ -19,17 +19,17 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
+//@ExtendWith(MockitoExtension.class)
 class MealListServiceTest {
 
     private MealListRepository repository = MealListRepository.getInstance();
     private MealListService mealListService = new MealListService();
 
 
-    @Mock
-    private MealListService mealListServiceMock;
-    @Mock
-    private Meal mealMock;
+//    @Mock
+//    private MealListService mealListServiceMock;
+//    @Mock
+//    private Meal mealMock;
 
     @BeforeEach
     public void initializeList() {
@@ -138,57 +138,57 @@ class MealListServiceTest {
 
     }
 
-    @Test
-    void readDataShouldBeEqualToLocalDateTimeWhenGetMealById() {
-        //given
-        LocalDateTime localDateTime = LocalDateTime.now();
-        //when
-        when(mealListServiceMock.getMealById(1)).thenReturn(mealMock);
-        when(mealListServiceMock.getMealById(1).getLastReadTime()).thenReturn(localDateTime);
-        //then
-        //  assertThat(mealListServiceMock.getMealById(1).getLastReadTime(), equalTo(localDateTime));
-        assertEquals(mealListServiceMock.getMealById(1).getLastReadTime(), localDateTime);
-
-    }
-
-    @Test
-    void dateShouldBeAddedWhenAddNewMeal() {
-        //given
-        Meal meal = new Meal(99, "Onion Rings");
-        LocalDateTime localDateTime = LocalDateTime.now();
-        //when
-        mealListService.addMeal(meal);
-        when(mealListServiceMock.getMealById(99)).thenReturn(mealMock);
-        when(mealListServiceMock.getMealById(99).getCreationTime()).thenReturn(localDateTime);
-        //then
-        assertThat(mealListServiceMock.getMealById(99).getCreationTime(), equalTo(localDateTime));
-    }
-
-    @Test
-    void dateShouldBeUpdateWhenUpdatingMeal() {
-        //given
-        Meal meal = new Meal(30, "Onion Rings");
-        LocalDateTime localDateTime = LocalDateTime.now();
-             //when
-        mealListService.updateMeal(1, meal);
-        when(mealListServiceMock.getMealById(1)).thenReturn(mealMock);
-        when(mealListServiceMock.getMealById(1).getUpdatedTime()).thenReturn(localDateTime);
-        //then
-        assertThat(mealListServiceMock.getMealById(1).getUpdatedTime(), is(localDateTime));
-    }
-    @Test
-    void shouldBeAbleToDisableCreationAndUpdateAndLastReadTimeOptions() {
-        //given
-        Meal meal = new Meal(10, "MealWithNoDataValues");
-        meal.setSaveTime(false);
-        //when
-        mealListService.addMeal(meal);
-        mealListService.getMealById(10);
-        //then
-        assertThat(mealListService.getMealById(10).getCreationTime(), is(nullValue()));
-        assertThat(mealListService.getMealById(10).getLastReadTime(), is(nullValue()));
-        assertThat(mealListService.getMealById(10).getUpdatedTime(), is(nullValue()));
-    }
+//    @Test
+//    void readDataShouldBeEqualToLocalDateTimeWhenGetMealById() {
+//        //given
+//        LocalDateTime localDateTime = LocalDateTime.now();
+//        //when
+//        when(mealListServiceMock.getMealById(1)).thenReturn(mealMock);
+//        when(mealListServiceMock.getMealById(1).getLastReadTime()).thenReturn(localDateTime);
+//        //then
+//        //  assertThat(mealListServiceMock.getMealById(1).getLastReadTime(), equalTo(localDateTime));
+//        assertEquals(mealListServiceMock.getMealById(1).getLastReadTime(), localDateTime);
+//
+//    }
+//
+//    @Test
+//    void dateShouldBeAddedWhenAddNewMeal() {
+//        //given
+//        Meal meal = new Meal(99, "Onion Rings");
+//        LocalDateTime localDateTime = LocalDateTime.now();
+//        //when
+//        mealListService.addMeal(meal);
+//        when(mealListServiceMock.getMealById(99)).thenReturn(mealMock);
+//        when(mealListServiceMock.getMealById(99).getCreationTime()).thenReturn(localDateTime);
+//        //then
+//        assertThat(mealListServiceMock.getMealById(99).getCreationTime(), equalTo(localDateTime));
+//    }
+//
+//    @Test
+//    void dateShouldBeUpdateWhenUpdatingMeal() {
+//        //given
+//        Meal meal = new Meal(30, "Onion Rings");
+//        LocalDateTime localDateTime = LocalDateTime.now();
+//             //when
+//        mealListService.updateMeal(1, meal);
+//        when(mealListServiceMock.getMealById(1)).thenReturn(mealMock);
+//        when(mealListServiceMock.getMealById(1).getUpdatedTime()).thenReturn(localDateTime);
+//        //then
+//        assertThat(mealListServiceMock.getMealById(1).getUpdatedTime(), is(localDateTime));
+//    }
+//    @Test
+//    void shouldBeAbleToDisableCreationAndUpdateAndLastReadTimeOptions() {
+//        //given
+//        Meal meal = new Meal(10, "MealWithNoDataValues");
+//        meal.setSaveTime(false);
+//        //when
+//        mealListService.addMeal(meal);
+//        mealListService.getMealById(10);
+//        //then
+//        assertThat(mealListService.getMealById(10).getCreationTime(), is(nullValue()));
+//        assertThat(mealListService.getMealById(10).getLastReadTime(), is(nullValue()));
+//        assertThat(mealListService.getMealById(10).getUpdatedTime(), is(nullValue()));
+//    }
 
 
 }
