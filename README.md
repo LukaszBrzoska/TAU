@@ -7,7 +7,6 @@
 ## [LAB 4 J-Meter](lab4%20j-meter/testPlan/)
 ## [LAB 5 Testy interfejsu webowego - Selenium](src/test/java/selenium)
 ## LAB 6 RobotFramework 
-[Moja aplikacja](lab6/figures-app)  
-[Testowana aplikacja](lab6/figures-test/src/main/python)  
-[Testy RobotFramework](lab6/figures-test/src/test/robotframework/test_s15595.robot)
+[Aplikacja](lab6/figures-app)   
+[Testy RobotFramework Selenium](https://github.com/LukaszBrzoska/TAU/tree/master/src/test/java/robot_framework)
 ## LAB 7 Testy w C++ - Catch2
