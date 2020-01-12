@@ -8,7 +8,7 @@ public class Main {
 
         if (args.length == 3 && isTraingle(args)) {
             if (isEquilateralTriangle(args)) {
-                System.out.println("Trojkąt rownoboczny");
+                System.out.println("Trojkat rownoboczny");
             } else if (isIsoscelesTriangle(args)) {
                 System.out.println("Trojkat rownoramienny");
             } else {
@@ -18,7 +18,7 @@ public class Main {
             if (isSquare(args)) {
                 System.out.println("Kwadrat");
             } else if (isRectangle(args)) {
-                System.out.println("Prostokąt");
+                System.out.println("Prostokat");
             } else {
                 System.out.println("Czworobok");
             }
@@ -35,8 +35,9 @@ public class Main {
         int b = integers.get(1);
         int c = integers.get(2);
 
-        if (a + b > c || a + c > b || b + c > a)
+        if (a + b > c && a + c > b && b + c > a){
             return true;
+            }
         return false;
     }
 
