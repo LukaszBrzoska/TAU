@@ -11,4 +11,7 @@ java Main 1 1 1
 ```
 where numbers are parameters
 
-
+## RobotFramework Test  
+```
+robot MainTest.robot
+```
