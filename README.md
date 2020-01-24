@@ -9,4 +9,4 @@
 ## LAB 6 RobotFramework 
 [Aplikacja](lab6/figures-app)   
 [Testy RobotFramework Selenium](https://github.com/LukaszBrzoska/TAU/tree/master/src/test/java/robot_framework)
-## LAB 7 Testy w C++ - Catch2
+## [LAB 7 Testy w C++ - Catch2](lab7)
