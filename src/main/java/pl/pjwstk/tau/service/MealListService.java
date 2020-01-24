@@ -1,6 +1,7 @@
 package pl.pjwstk.tau.service;
 
 import pl.pjwstk.tau.model.Meal;
+import pl.pjwstk.tau.model.MealDateTime;
 import pl.pjwstk.tau.model.MealList;
 import pl.pjwstk.tau.repository.MealListRepository;
 
@@ -20,7 +21,7 @@ public class MealListService {
         if (meal == null) throw new IllegalArgumentException("Object is null");
         if (meal.isSaveTime()) {
             MealListRepository.getInstance().collectionAccess().add(meal);
-            meal.setCreationTime(LocalDateTime.now());
+            meal.setCreationTime(new MealDateTime());
         } else {
             MealListRepository.getInstance().collectionAccess().add(meal);
         }
@@ -34,7 +35,7 @@ public class MealListService {
             if (optionalMeal.isPresent()) {
                 Meal meal = optionalMeal.get();
                 if (meal.isSaveTime()) {
-                    meal.setLastReadTime(LocalDateTime.now());
+                    meal.setLastReadTime(new MealDateTime());
                 }
                 return meal;
             }
@@ -63,8 +64,8 @@ public class MealListService {
             mealToUpdate.setSaveTime(meal.isSaveTime());
 
             if (meal.isSaveTime()) {
-                mealToUpdate.setUpdatedTime(LocalDateTime.now());
-                mealToUpdate.setLastReadTime(LocalDateTime.now());
+                mealToUpdate.setUpdatedTime(new MealDateTime());
+                mealToUpdate.setLastReadTime(new MealDateTime());
             }
             MealListRepository.getInstance().collectionAccess().remove(getMealById(id));
             MealListRepository.getInstance().collectionAccess().add(mealToUpdate);

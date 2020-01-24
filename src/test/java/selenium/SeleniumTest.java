@@ -29,7 +29,6 @@ public class SeleniumTest {
 
     @BeforeAll
     static void setDriver() {
-//        WebDriverManager.chromedriver().setup();
         System.setProperty("webdriver.chrome.driver", ("chromedriver.exe"));
         screenDimensionsList = new ArrayList<Dimension>();
         screenDimensionsList.add(new Dimension(1600,800));

@@ -1,6 +1,7 @@
 package pl.pjwstk.tau.repository;
 
 import pl.pjwstk.tau.model.Meal;
+import pl.pjwstk.tau.model.MealDateTime;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class MealListRepository {
         meals
                 .stream()
                 .filter(Meal::isSaveTime)
-                .forEach(meal -> meal.setLastReadTime(LocalDateTime.now()));
+                .forEach(meal -> meal.setLastReadTime(new MealDateTime()));
         return meals;
     }
 

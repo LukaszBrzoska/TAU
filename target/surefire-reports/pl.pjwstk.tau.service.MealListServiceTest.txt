@@ -1,4 +1,234 @@
 -------------------------------------------------------------------------------
 Test set: pl.pjwstk.tau.service.MealListServiceTest
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in pl.pjwstk.tau.service.MealListServiceTest
+Tests run: 10, Failures: 0, Errors: 10, Skipped: 0, Time elapsed: 0.939 s <<< FAILURE! - in pl.pjwstk.tau.service.MealListServiceTest
+getMealByName  Time elapsed: 0.878 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+
+addMealToList  Time elapsed: 0.004 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+
+deleteMealByNoExistIdShouldFail  Time elapsed: 0.003 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+
+readDataShouldBeEqualToLocalDateTimeWhenGetMealById  Time elapsed: 0.003 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+
+getAllMeals  Time elapsed: 0.005 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+
+updateMeal  Time elapsed: 0.003 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+
+getMealByNoExistIdShouldThrowNoSuchElementException  Time elapsed: 0.001 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+
+getMealById  Time elapsed: 0 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+
+deleteMealById  Time elapsed: 0.002 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+
+updateMealShouldThrowNoSuchElementException  Time elapsed: 0.003 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+

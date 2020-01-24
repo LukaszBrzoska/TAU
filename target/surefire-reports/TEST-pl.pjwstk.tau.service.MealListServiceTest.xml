@@ -1,67 +1,303 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="pl.pjwstk.tau.service.MealListServiceTest" time="0.015" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="pl.pjwstk.tau.service.MealListServiceTest" time="0.939" tests="10" errors="10" skipped="0" failures="0">
   <properties>
-    <property name="java.specification.version" value="13"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1250"/>
     <property name="java.class.path" value="C:\Users\Łukasz\workspace\TAU\target\test-classes;C:\Users\Łukasz\workspace\TAU\target\classes;C:\Users\Łukasz\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.3.2\junit-jupiter-engine-5.3.2.jar;C:\Users\Łukasz\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\Łukasz\.m2\repository\org\junit\platform\junit-platform-engine\1.3.2\junit-platform-engine-1.3.2.jar;C:\Users\Łukasz\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.3.2\junit-jupiter-api-5.3.2.jar;C:\Users\Łukasz\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\Łukasz\.m2\repository\org\junit\platform\junit-platform-commons\1.3.2\junit-platform-commons-1.3.2.jar;C:\Users\Łukasz\.m2\repository\org\junit\platform\junit-platform-launcher\1.4.0\junit-platform-launcher-1.4.0.jar;C:\Users\Łukasz\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\Łukasz\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.3.1\junit-jupiter-params-5.3.1.jar;C:\Users\Łukasz\.m2\repository\org\mockito\mockito-junit-jupiter\3.1.0\mockito-junit-jupiter-3.1.0.jar;C:\Users\Łukasz\.m2\repository\org\mockito\mockito-core\3.1.0\mockito-core-3.1.0.jar;C:\Users\Łukasz\.m2\repository\net\bytebuddy\byte-buddy-agent\1.9.10\byte-buddy-agent-1.9.10.jar;C:\Users\Łukasz\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;C:\Users\Łukasz\.m2\repository\org\jbehave\jbehave-core\4.6\jbehave-core-4.6.jar;C:\Users\Łukasz\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Łukasz\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Łukasz\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\Łukasz\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar;C:\Users\Łukasz\.m2\repository\org\apache\commons\commons-text\1.3\commons-text-1.3.jar;C:\Users\Łukasz\.m2\repository\org\codehaus\plexus\plexus-utils\3.1.0\plexus-utils-3.1.0.jar;C:\Users\Łukasz\.m2\repository\org\freemarker\freemarker\2.3.28\freemarker-2.3.28.jar;C:\Users\Łukasz\.m2\repository\com\thoughtworks\paranamer\paranamer\2.8\paranamer-2.8.jar;C:\Users\Łukasz\.m2\repository\com\thoughtworks\xstream\xstream\1.4.9\xstream-1.4.9.jar;C:\Users\Łukasz\.m2\repository\xmlpull\xmlpull\1.1.3.1\xmlpull-1.1.3.1.jar;C:\Users\Łukasz\.m2\repository\xpp3\xpp3_min\1.1.4c\xpp3_min-1.1.4c.jar;C:\Users\Łukasz\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\Łukasz\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\Łukasz\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\Łukasz\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\Łukasz\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\Łukasz\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\Łukasz\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\Łukasz\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\Łukasz\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\Łukasz\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\Łukasz\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\io\github\bonigarcia\webdrivermanager\3.6.2\webdrivermanager-3.6.2.jar;C:\Users\Łukasz\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Łukasz\.m2\repository\org\apache\httpcomponents\httpclient\4.5.6\httpclient-4.5.6.jar;C:\Users\Łukasz\.m2\repository\org\apache\httpcomponents\httpcore\4.4.10\httpcore-4.4.10.jar;C:\Users\Łukasz\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Łukasz\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\Łukasz\.m2\repository\org\rauschig\jarchivelib\1.0.0\jarchivelib-1.0.0.jar;C:\Users\Łukasz\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar;C:\Users\Łukasz\.m2\repository\org\jsoup\jsoup\1.11.3\jsoup-1.11.3.jar;"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.vendor" value="JetBrains s.r.o"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="https://java.oracle.com/"/>
-    <property name="user.timezone" value="Europe/Warsaw"/>
+    <property name="java.vendor.url" value="https://www.jetbrains.com/"/>
+    <property name="user.timezone" value="Europe/Belgrade"/>
+    <property name="java.vm.specification.version" value="11"/>
     <property name="os.name" value="Windows 10"/>
-    <property name="java.vm.specification.version" value="13"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="PL"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-13\bin"/>
-    <property name="sun.java.command" value="C:\Users\UKASZ~1\AppData\Local\Temp\surefire13525392786366271010\surefirebooter12665008233783580070.jar C:\Users\Łukasz\AppData\Local\Temp\surefire13525392786366271010 2020-01-12T12-15-05_953-jvmRun1 surefire11839429882096468361tmp surefire_013793805087594341843tmp"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.4\jbr\bin"/>
+    <property name="sun.java.command" value="C:\Users\UKASZ~1\AppData\Local\Temp\surefire7181113965811018519\surefirebooter12751044120198043779.jar C:\Users\Łukasz\AppData\Local\Temp\surefire7181113965811018519 2020-01-21T22-51-36_849-jvmRun1 surefire13226605458226851037tmp surefire_07762418823220740181tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Łukasz\workspace\TAU\target\test-classes;C:\Users\Łukasz\workspace\TAU\target\classes;C:\Users\Łukasz\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.3.2\junit-jupiter-engine-5.3.2.jar;C:\Users\Łukasz\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\Łukasz\.m2\repository\org\junit\platform\junit-platform-engine\1.3.2\junit-platform-engine-1.3.2.jar;C:\Users\Łukasz\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.3.2\junit-jupiter-api-5.3.2.jar;C:\Users\Łukasz\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\Łukasz\.m2\repository\org\junit\platform\junit-platform-commons\1.3.2\junit-platform-commons-1.3.2.jar;C:\Users\Łukasz\.m2\repository\org\junit\platform\junit-platform-launcher\1.4.0\junit-platform-launcher-1.4.0.jar;C:\Users\Łukasz\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\Łukasz\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.3.1\junit-jupiter-params-5.3.1.jar;C:\Users\Łukasz\.m2\repository\org\mockito\mockito-junit-jupiter\3.1.0\mockito-junit-jupiter-3.1.0.jar;C:\Users\Łukasz\.m2\repository\org\mockito\mockito-core\3.1.0\mockito-core-3.1.0.jar;C:\Users\Łukasz\.m2\repository\net\bytebuddy\byte-buddy-agent\1.9.10\byte-buddy-agent-1.9.10.jar;C:\Users\Łukasz\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;C:\Users\Łukasz\.m2\repository\org\jbehave\jbehave-core\4.6\jbehave-core-4.6.jar;C:\Users\Łukasz\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Łukasz\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Łukasz\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\Łukasz\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar;C:\Users\Łukasz\.m2\repository\org\apache\commons\commons-text\1.3\commons-text-1.3.jar;C:\Users\Łukasz\.m2\repository\org\codehaus\plexus\plexus-utils\3.1.0\plexus-utils-3.1.0.jar;C:\Users\Łukasz\.m2\repository\org\freemarker\freemarker\2.3.28\freemarker-2.3.28.jar;C:\Users\Łukasz\.m2\repository\com\thoughtworks\paranamer\paranamer\2.8\paranamer-2.8.jar;C:\Users\Łukasz\.m2\repository\com\thoughtworks\xstream\xstream\1.4.9\xstream-1.4.9.jar;C:\Users\Łukasz\.m2\repository\xmlpull\xmlpull\1.1.3.1\xmlpull-1.1.3.1.jar;C:\Users\Łukasz\.m2\repository\xpp3\xpp3_min\1.1.4c\xpp3_min-1.1.4c.jar;C:\Users\Łukasz\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\Łukasz\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\Łukasz\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\Łukasz\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\Łukasz\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\Łukasz\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\Łukasz\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\Łukasz\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\Łukasz\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\Łukasz\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\Łukasz\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\Łukasz\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\Łukasz\.m2\repository\io\github\bonigarcia\webdrivermanager\3.6.2\webdrivermanager-3.6.2.jar;C:\Users\Łukasz\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Łukasz\.m2\repository\org\apache\httpcomponents\httpclient\4.5.6\httpclient-4.5.6.jar;C:\Users\Łukasz\.m2\repository\org\apache\httpcomponents\httpcore\4.4.10\httpcore-4.4.10.jar;C:\Users\Łukasz\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Łukasz\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\Łukasz\.m2\repository\org\rauschig\jarchivelib\1.0.0\jarchivelib-1.0.0.jar;C:\Users\Łukasz\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar;C:\Users\Łukasz\.m2\repository\org\jsoup\jsoup\1.11.3\jsoup-1.11.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Łukasz"/>
     <property name="user.language" value="pl"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2019-09-17"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk-13"/>
+    <property name="java.version.date" value="2019-07-16"/>
+    <property name="java.home" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.4\jbr"/>
     <property name="file.separator" value="\"/>
     <property name="basedir" value="C:\Users\Łukasz\workspace\TAU"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="idea.version2019.2.4" value="true"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\UKASZ~1\AppData\Local\Temp\surefire13525392786366271010\surefirebooter12665008233783580070.jar"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\UKASZ~1\AppData\Local\Temp\surefire7181113965811018519\surefirebooter12751044120198043779.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="13+33"/>
+    <property name="java.runtime.version" value="11.0.4+10-b304.77"/>
     <property name="user.name" value="Łukasz"/>
     <property name="path.separator" value=";"/>
     <property name="os.version" value="10.0"/>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="Cp1250"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="localRepository" value="C:\Users\Łukasz\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.vendor.url.bug" value="https://youtrack.jetbrains.com"/>
     <property name="java.io.tmpdir" value="C:\Users\UKASZ~1\AppData\Local\Temp\"/>
-    <property name="java.version" value="13"/>
+    <property name="java.version" value="11.0.4"/>
     <property name="user.dir" value="C:\Users\Łukasz\workspace\TAU"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-13\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk-13\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\PuTTY\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\apache-maven-3.6.0\bin;C:\Program Files\apache-maven-3.6.0\bin;C:\Gradle\gradle-4.6\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\apache-maven-3.6.0\bin;C:\Program Files (x86)\Brackets\command;C:\Program Files\Git\cmd;%GIT_HOME&amp;\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files (x86)\GitExtensions\;C:\pjwstk\bin;C:\Users\Łukasz\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Łukasz\AppData\Local\Programs\Python\Python37\;C:\Users\Łukasz\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Łukasz\AppData\Local\Programs\Python\Python38-32\;C:\Program Files\Java\jdk-13\bin;C:\Users\Łukasz\AppData\Local\Microsoft\WindowsApps;C:\Users\Łukasz\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\bin;C:\Users\Łukasz\.dotnet\tools;C:\Users\Łukasz\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.4\bin;;;C:\Program Files\JetBrains\PyCharm Edu 2019.3\bin;;C:\Users\Łukasz\AppData\Roaming\npm;."/>
+    <property name="java.library.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.4\jbr\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk-13\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\PuTTY\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\apache-maven-3.6.0\bin;C:\Program Files\apache-maven-3.6.0\bin;C:\Gradle\gradle-4.6\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\apache-maven-3.6.0\bin;C:\Program Files (x86)\Brackets\command;C:\Program Files\Git\cmd;%GIT_HOME&amp;\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files (x86)\GitExtensions\;C:\pjwstk\bin;C:\Users\Łukasz\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Łukasz\AppData\Local\Programs\Python\Python37\;C:\Users\Łukasz\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Łukasz\AppData\Local\Programs\Python\Python38-32\;C:\Program Files\Java\jdk-13\bin;C:\Users\Łukasz\AppData\Local\Microsoft\WindowsApps;C:\Users\Łukasz\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\bin;C:\Users\Łukasz\.dotnet\tools;C:\Users\Łukasz\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.4\bin;;;C:\Program Files\JetBrains\PyCharm Edu 2019.3\bin;;C:\Users\Łukasz\AppData\Roaming\npm;."/>
+    <property name="java.vendor" value="JetBrains s.r.o"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="13+33"/>
+    <property name="java.vm.version" value="11.0.4+10-b304.77"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="java.class.version" value="57.0"/>
+    <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="getMealByName" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0"/>
-  <testcase name="addMealToList" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0"/>
-  <testcase name="deleteMealByNoExistIdShouldFail" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0"/>
-  <testcase name="getAllMeals" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0"/>
-  <testcase name="updateMeal" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0"/>
-  <testcase name="getMealByNoExistIdShouldThrowNoSuchElementException" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0"/>
-  <testcase name="getMealById" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0"/>
-  <testcase name="deleteMealById" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0"/>
-  <testcase name="updateMealShouldThrowNoSuchElementException" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0"/>
+  <testcase name="getMealByName" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0.878">
+    <error message="&#10;Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.&#10;&#10;Mockito can only mock non-private &amp; non-final classes.&#10;If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.&#10;&#10;&#10;Java               : 11&#10;JVM vendor name    : JetBrains s.r.o&#10;JVM vendor version : 11.0.4+10-b304.77&#10;JVM name           : OpenJDK 64-Bit Server VM&#10;JVM version        : 11.0.4+10-b304.77&#10;JVM info           : mixed mode, sharing&#10;OS name            : Windows 10&#10;OS version         : 10.0&#10;&#10;&#10;Underlying exception : java.lang.IllegalArgumentException: Could not create type" type="org.mockito.exceptions.base.MockitoException"><![CDATA[org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+]]></error>
+  </testcase>
+  <testcase name="addMealToList" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0.004">
+    <error message="&#10;Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.&#10;&#10;Mockito can only mock non-private &amp; non-final classes.&#10;If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.&#10;&#10;&#10;Java               : 11&#10;JVM vendor name    : JetBrains s.r.o&#10;JVM vendor version : 11.0.4+10-b304.77&#10;JVM name           : OpenJDK 64-Bit Server VM&#10;JVM version        : 11.0.4+10-b304.77&#10;JVM info           : mixed mode, sharing&#10;OS name            : Windows 10&#10;OS version         : 10.0&#10;&#10;&#10;Underlying exception : java.lang.IllegalArgumentException: Could not create type" type="org.mockito.exceptions.base.MockitoException"><![CDATA[org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+]]></error>
+  </testcase>
+  <testcase name="deleteMealByNoExistIdShouldFail" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0.003">
+    <error message="&#10;Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.&#10;&#10;Mockito can only mock non-private &amp; non-final classes.&#10;If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.&#10;&#10;&#10;Java               : 11&#10;JVM vendor name    : JetBrains s.r.o&#10;JVM vendor version : 11.0.4+10-b304.77&#10;JVM name           : OpenJDK 64-Bit Server VM&#10;JVM version        : 11.0.4+10-b304.77&#10;JVM info           : mixed mode, sharing&#10;OS name            : Windows 10&#10;OS version         : 10.0&#10;&#10;&#10;Underlying exception : java.lang.IllegalArgumentException: Could not create type" type="org.mockito.exceptions.base.MockitoException"><![CDATA[org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+]]></error>
+  </testcase>
+  <testcase name="readDataShouldBeEqualToLocalDateTimeWhenGetMealById" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0.003">
+    <error message="&#10;Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.&#10;&#10;Mockito can only mock non-private &amp; non-final classes.&#10;If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.&#10;&#10;&#10;Java               : 11&#10;JVM vendor name    : JetBrains s.r.o&#10;JVM vendor version : 11.0.4+10-b304.77&#10;JVM name           : OpenJDK 64-Bit Server VM&#10;JVM version        : 11.0.4+10-b304.77&#10;JVM info           : mixed mode, sharing&#10;OS name            : Windows 10&#10;OS version         : 10.0&#10;&#10;&#10;Underlying exception : java.lang.IllegalArgumentException: Could not create type" type="org.mockito.exceptions.base.MockitoException"><![CDATA[org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+]]></error>
+  </testcase>
+  <testcase name="getAllMeals" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0.005">
+    <error message="&#10;Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.&#10;&#10;Mockito can only mock non-private &amp; non-final classes.&#10;If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.&#10;&#10;&#10;Java               : 11&#10;JVM vendor name    : JetBrains s.r.o&#10;JVM vendor version : 11.0.4+10-b304.77&#10;JVM name           : OpenJDK 64-Bit Server VM&#10;JVM version        : 11.0.4+10-b304.77&#10;JVM info           : mixed mode, sharing&#10;OS name            : Windows 10&#10;OS version         : 10.0&#10;&#10;&#10;Underlying exception : java.lang.IllegalArgumentException: Could not create type" type="org.mockito.exceptions.base.MockitoException"><![CDATA[org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+]]></error>
+  </testcase>
+  <testcase name="updateMeal" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0.003">
+    <error message="&#10;Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.&#10;&#10;Mockito can only mock non-private &amp; non-final classes.&#10;If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.&#10;&#10;&#10;Java               : 11&#10;JVM vendor name    : JetBrains s.r.o&#10;JVM vendor version : 11.0.4+10-b304.77&#10;JVM name           : OpenJDK 64-Bit Server VM&#10;JVM version        : 11.0.4+10-b304.77&#10;JVM info           : mixed mode, sharing&#10;OS name            : Windows 10&#10;OS version         : 10.0&#10;&#10;&#10;Underlying exception : java.lang.IllegalArgumentException: Could not create type" type="org.mockito.exceptions.base.MockitoException"><![CDATA[org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+]]></error>
+  </testcase>
+  <testcase name="getMealByNoExistIdShouldThrowNoSuchElementException" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0.001">
+    <error message="&#10;Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.&#10;&#10;Mockito can only mock non-private &amp; non-final classes.&#10;If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.&#10;&#10;&#10;Java               : 11&#10;JVM vendor name    : JetBrains s.r.o&#10;JVM vendor version : 11.0.4+10-b304.77&#10;JVM name           : OpenJDK 64-Bit Server VM&#10;JVM version        : 11.0.4+10-b304.77&#10;JVM info           : mixed mode, sharing&#10;OS name            : Windows 10&#10;OS version         : 10.0&#10;&#10;&#10;Underlying exception : java.lang.IllegalArgumentException: Could not create type" type="org.mockito.exceptions.base.MockitoException"><![CDATA[org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+]]></error>
+  </testcase>
+  <testcase name="getMealById" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0">
+    <error message="&#10;Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.&#10;&#10;Mockito can only mock non-private &amp; non-final classes.&#10;If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.&#10;&#10;&#10;Java               : 11&#10;JVM vendor name    : JetBrains s.r.o&#10;JVM vendor version : 11.0.4+10-b304.77&#10;JVM name           : OpenJDK 64-Bit Server VM&#10;JVM version        : 11.0.4+10-b304.77&#10;JVM info           : mixed mode, sharing&#10;OS name            : Windows 10&#10;OS version         : 10.0&#10;&#10;&#10;Underlying exception : java.lang.IllegalArgumentException: Could not create type" type="org.mockito.exceptions.base.MockitoException"><![CDATA[org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+]]></error>
+  </testcase>
+  <testcase name="deleteMealById" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0.002">
+    <error message="&#10;Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.&#10;&#10;Mockito can only mock non-private &amp; non-final classes.&#10;If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.&#10;&#10;&#10;Java               : 11&#10;JVM vendor name    : JetBrains s.r.o&#10;JVM vendor version : 11.0.4+10-b304.77&#10;JVM name           : OpenJDK 64-Bit Server VM&#10;JVM version        : 11.0.4+10-b304.77&#10;JVM info           : mixed mode, sharing&#10;OS name            : Windows 10&#10;OS version         : 10.0&#10;&#10;&#10;Underlying exception : java.lang.IllegalArgumentException: Could not create type" type="org.mockito.exceptions.base.MockitoException"><![CDATA[org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+]]></error>
+  </testcase>
+  <testcase name="updateMealShouldThrowNoSuchElementException" classname="pl.pjwstk.tau.service.MealListServiceTest" time="0.003">
+    <error message="&#10;Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.&#10;&#10;Mockito can only mock non-private &amp; non-final classes.&#10;If you&apos;re not sure why you&apos;re getting this error, please report to the mailing list.&#10;&#10;&#10;Java               : 11&#10;JVM vendor name    : JetBrains s.r.o&#10;JVM vendor version : 11.0.4+10-b304.77&#10;JVM name           : OpenJDK 64-Bit Server VM&#10;JVM version        : 11.0.4+10-b304.77&#10;JVM info           : mixed mode, sharing&#10;OS name            : Windows 10&#10;OS version         : 10.0&#10;&#10;&#10;Underlying exception : java.lang.IllegalArgumentException: Could not create type" type="org.mockito.exceptions.base.MockitoException"><![CDATA[org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class pl.pjwstk.tau.model.MealDateTime.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 11
+JVM vendor name    : JetBrains s.r.o
+JVM vendor version : 11.0.4+10-b304.77
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 11.0.4+10-b304.77
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.IllegalArgumentException: Could not create type
+Caused by: java.lang.NoSuchMethodError: 'net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder net.bytebuddy.dynamic.loading.MultipleParentClassLoader$Builder.appendMostSpecific(java.util.Collection)'
+]]></error>
+  </testcase>
 </testsuite>

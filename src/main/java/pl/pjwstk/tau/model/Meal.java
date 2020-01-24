@@ -7,9 +7,9 @@ public class Meal {
     private Long id;
     private String mealName;
     private double price;
-    private LocalDateTime creationTime;
-    private LocalDateTime updatedTime;
-    private LocalDateTime lastReadTime;
+    private MealDateTime creationTime;
+    private MealDateTime updatedTime;
+    private MealDateTime lastReadTime;
     private boolean saveTime;
 
 
@@ -53,27 +53,27 @@ public class Meal {
         this.price = price;
     }
 
-    public LocalDateTime getCreationTime() {
+    public MealDateTime getCreationTime() {
         return creationTime;
     }
 
-    public void setCreationTime(LocalDateTime creationTime) {
+    public void setCreationTime(MealDateTime creationTime) {
         this.creationTime = creationTime;
     }
 
-    public LocalDateTime getUpdatedTime() {
+    public MealDateTime getUpdatedTime() {
         return updatedTime;
     }
 
-    public void setUpdatedTime(LocalDateTime updatedTime) {
+    public void setUpdatedTime(MealDateTime updatedTime) {
         this.updatedTime = updatedTime;
     }
 
-    public LocalDateTime getLastReadTime() {
+    public MealDateTime getLastReadTime() {
         return lastReadTime;
     }
 
-    public void setLastReadTime(LocalDateTime lastReadTime) {
+    public void setLastReadTime(MealDateTime lastReadTime) {
         this.lastReadTime = lastReadTime;
     }
 
