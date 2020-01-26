@@ -23,8 +23,6 @@ public class MealListRepository {
 
     public List<Meal> collectionAccess() {
         meals
-                .stream()
-                .filter(Meal::isSaveTime)
                 .forEach(meal -> meal.setLastReadTime(new MealDateTime()));
         return meals;
     }
@@ -33,7 +31,7 @@ public class MealListRepository {
         this.meals = meals;
     }
 
-    public Optional<Meal> getMealById(Long id){
+    public Optional<Meal> getMealById(Long id) {
         return meals.stream()
                 .filter(meal -> meal.getId().equals(id))
                 .findFirst();

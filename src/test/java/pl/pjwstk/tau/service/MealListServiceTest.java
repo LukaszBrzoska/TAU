@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import pl.pjwstk.tau.model.Meal;
@@ -23,17 +24,15 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class MealListServiceTest {
 
+    private MealDateTimeService mealDateTimeService = new MealDateTimeService();
     private MealListRepository repository = MealListRepository.getInstance();
-    private MealListService mealListService = new MealListService();
+    private MealListService mealListService = new MealListService(mealDateTimeService);
 
     private static final LocalDateTime TIME = LocalDateTime.of(2019,1,1,1,1,1);
 
     @Mock
-    private MealDateTime mealDateTimeMock;
-    @Mock
-    private MealListService mealListServiceMock;
-    @Mock
-    private Meal mealMock;
+    private MealDateTimeService mealDateTimeMockService;
+
 
 
     @BeforeEach
@@ -56,6 +55,7 @@ class MealListServiceTest {
         int countBeforeAdd = repository.collectionAccess().size();
         Meal meal = new Meal(5, "Chicken Burger");
         //when
+
         mealListService.addMeal(meal);
         //then
         assertThat(mealListService.getAllMeals().get(4), is(meal));
@@ -120,7 +120,7 @@ class MealListServiceTest {
     @Test
     void updateMeal() {
         //given
-        Meal meal = new Meal(30, "Onion Rings");
+        Meal meal = new Meal(10, "Onion Rings");
         meal.setPrice(8.50);
         //when
         mealListService.updateMeal(1, meal);
@@ -143,54 +143,76 @@ class MealListServiceTest {
 
     }
 
+        // MOCKI
     @Test
-    void readDataShouldBeEqualToLocalDateTimeWhenGetMealById() {
-
-//        when(mealListService.getMealById(1)).thenReturn(mealMock);
+    void dateShouldBeAddedWhenAddNewMeal() {
+        //given
+        Meal meal = new Meal(99, "Onion Rings");
+        LocalDateTime localDateTime = LocalDateTime.now();
+        MealListService mealListService2 = new MealListService(mealDateTimeMockService);
+        //when
+        when(mealDateTimeMockService.createMealDateTime()).thenReturn(localDateTime);
+        mealListService2.addMeal(meal);
         //then
-        //  assertThat(mealListServiceMock.getMealById(1).getLastReadTime(), equalTo(localDateTime));
-        assertNotNull(mealListService.getMealById(1).getLastReadTime());
+        assertThat(mealListService2.getMealById(99).getCreationTime().getLocalDateTime(), equalTo(localDateTime));
 
     }
 
-//    @Test
-//    void dateShouldBeAddedWhenAddNewMeal() {
-//        //given
-//        Meal meal = new Meal(99, "Onion Rings");
-//        LocalDateTime localDateTime = LocalDateTime.now();
-//        //when
-//        mealListService.addMeal(meal);
-//        when(mealListServiceMock.getMealById(99)).thenReturn(mealMock);
-//        when(mealListServiceMock.getMealById(99).getCreationTime()).thenReturn(localDateTime);
-//        //then
-//        assertThat(mealListServiceMock.getMealById(99).getCreationTime(), equalTo(localDateTime));
-//    }
-//
-//    @Test
-//    void dateShouldBeUpdateWhenUpdatingMeal() {
-//        //given
-//        Meal meal = new Meal(30, "Onion Rings");
-//        LocalDateTime localDateTime = LocalDateTime.now();
-//             //when
-//        mealListService.updateMeal(1, meal);
-//        when(mealListServiceMock.getMealById(1)).thenReturn(mealMock);
-//        when(mealListServiceMock.getMealById(1).getUpdatedTime()).thenReturn(localDateTime);
-//        //then
-//        assertThat(mealListServiceMock.getMealById(1).getUpdatedTime(), is(localDateTime));
-//    }
-//    @Test
-//    void shouldBeAbleToDisableCreationAndUpdateAndLastReadTimeOptions() {
-//        //given
-//        Meal meal = new Meal(10, "MealWithNoDataValues");
-//        meal.setSaveTime(false);
-//        //when
-//        mealListService.addMeal(meal);
-//        mealListService.getMealById(10);
-//        //then
-//        assertThat(mealListService.getMealById(10).getCreationTime(), is(nullValue()));
-//        assertThat(mealListService.getMealById(10).getLastReadTime(), is(nullValue()));
-//        assertThat(mealListService.getMealById(10).getUpdatedTime(), is(nullValue()));
-//    }
-//
+    @Test
+    void dateShouldBeUpdateWhenUpdatingMeal() {
+        //given
+        Meal meal = new Meal(30, "Onion Rings");
+        LocalDateTime localDateTime = LocalDateTime.now();
+        MealListService mealListService2 = new MealListService(mealDateTimeMockService);
+        //when
+        when(mealDateTimeMockService.createMealDateTime()).thenReturn(localDateTime);
+        mealListService2.updateMeal(1, meal);
+        //then
+        assertThat(mealListService2.getMealById(1).getUpdatedTime().getLocalDateTime(), is(localDateTime));
+    }
+    @Test
+    void dateShouldBeUpdateWhenGetMealById() {
+        //given
+        Meal meal = new Meal(10, "MealWithNoDataValues");
+        LocalDateTime localDateTime = LocalDateTime.now();
+        MealListService mealListService2 = new MealListService(mealDateTimeMockService);
+        //when
+        when(mealDateTimeMockService.createMealDateTime()).thenReturn(localDateTime);
+        mealListService2.getMealById(1);
+        //then
+        assertThat(mealListService2.getMealById(1).getLastReadTime().getLocalDateTime(), is(not(meal.getLastReadTime().getLocalDateTime())));
+        assertThat(mealListService2.getMealById(1).getLastReadTime().getLocalDateTime(), is(localDateTime));
+    }
+
+    @Test
+    void dataShouldBeNullWhenCreationTimeIsNotActive() {
+        //given
+        Meal meal = new Meal(99, "Onion Rings");
+        LocalDateTime localDateTime = LocalDateTime.now();
+        meal.getCreationTime().setActive(false);
+        MealListService mealListService2 = new MealListService(mealDateTimeMockService);
+        //when
+        when(mealDateTimeMockService.createMealDateTime()).thenReturn(localDateTime);
+        mealListService2.addMeal(meal);
+        //then
+        assertNull(mealListService2.getMealById(99).getCreationTime().getLocalDateTime());
+
+    }
+
+    @Test
+    void dataShouldBeNullWhenUpdateTimeIsNotActive() {
+        //given
+        Meal meal = new Meal(99, "Onion Rings");
+        LocalDateTime localDateTime = LocalDateTime.now();
+        meal.getUpdatedTime().setActive(false);
+        MealListService mealListService2 = new MealListService(mealDateTimeMockService);
+        //when
+        when(mealDateTimeMockService.createMealDateTime()).thenReturn(localDateTime);
+        mealListService2.updateMeal(1, meal);
+        //then
+        assertNull(mealListService2.getMealById(1).getUpdatedTime().getLocalDateTime());
+
+    }
+
 
 }

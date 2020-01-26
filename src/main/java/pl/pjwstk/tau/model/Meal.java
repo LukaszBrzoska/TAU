@@ -10,24 +10,30 @@ public class Meal {
     private MealDateTime creationTime;
     private MealDateTime updatedTime;
     private MealDateTime lastReadTime;
-    private boolean saveTime;
 
 
-    public Meal() {
-    }
+
 
     public Meal(long id, String mealName) {
         this.id = id;
         this.mealName = mealName;
-        this.saveTime = true;
+        this.creationTime = new MealDateTime();
+        this.updatedTime = new MealDateTime();
+        this.lastReadTime = new MealDateTime();
+
     }
 
     public Meal(long id, String mealName, double price) {
         this.id = id;
         this.mealName = mealName;
         this.price = price;
-        this.saveTime = true;
+        this.creationTime = new MealDateTime();
+        this.updatedTime = new MealDateTime();
+        this.lastReadTime = new MealDateTime();
+
     }
+
+
 
     public Long getId() {
         return id;
@@ -77,14 +83,6 @@ public class Meal {
         this.lastReadTime = lastReadTime;
     }
 
-    public boolean isSaveTime() {
-        return saveTime;
-    }
-
-    public void setSaveTime(boolean saveTime) {
-        this.saveTime = saveTime;
-    }
-
     @Override
     public String toString() {
         return "Meal{" +
@@ -94,7 +92,6 @@ public class Meal {
                 ", creationTime=" + creationTime +
                 ", updatedTime=" + updatedTime +
                 ", lastReadTime=" + lastReadTime +
-                ", saveTime=" + saveTime +
                 '}';
     }
 }

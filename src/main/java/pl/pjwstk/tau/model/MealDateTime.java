@@ -8,9 +8,9 @@ public class MealDateTime {
     private boolean IsActive;
 
     public MealDateTime() {
-        this.localDateTime = LocalDateTime.now();
         IsActive = true;
     }
+
 
     public LocalDateTime getLocalDateTime() {
         return localDateTime;

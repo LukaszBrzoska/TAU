@@ -17,14 +17,22 @@ public class MealListService {
     public MealListService() {
     }
 
+
+
+    private MealDateTimeService mealDateTimeService;
+
+    public MealListService(MealDateTimeService mealDateTimeService) {
+        this.mealDateTimeService = mealDateTimeService;
+    }
+
     public boolean addMeal(Meal meal) {
         if (meal == null) throw new IllegalArgumentException("Object is null");
-        if (meal.isSaveTime()) {
-            MealListRepository.getInstance().collectionAccess().add(meal);
-            meal.setCreationTime(new MealDateTime());
-        } else {
-            MealListRepository.getInstance().collectionAccess().add(meal);
+
+        MealListRepository.getInstance().collectionAccess().add(meal);
+        if(meal.getCreationTime().isActive()) {
+            meal.getCreationTime().setLocalDateTime(mealDateTimeService.createMealDateTime());
         }
+
         return true;
     }
 
@@ -34,8 +42,9 @@ public class MealListService {
             Optional<Meal> optionalMeal = MealListRepository.getInstance().getMealById(id);
             if (optionalMeal.isPresent()) {
                 Meal meal = optionalMeal.get();
-                if (meal.isSaveTime()) {
-                    meal.setLastReadTime(new MealDateTime());
+
+                if(meal.getLastReadTime().isActive()){
+                    meal.getLastReadTime().setLocalDateTime(mealDateTimeService.createMealDateTime());
                 }
                 return meal;
             }
@@ -61,11 +70,12 @@ public class MealListService {
 
             mealToUpdate.setMealName(meal.getMealName());
             mealToUpdate.setPrice(meal.getPrice());
-            mealToUpdate.setSaveTime(meal.isSaveTime());
 
-            if (meal.isSaveTime()) {
-                mealToUpdate.setUpdatedTime(new MealDateTime());
-                mealToUpdate.setLastReadTime(new MealDateTime());
+            if(meal.getUpdatedTime().isActive()) {
+                mealToUpdate.getUpdatedTime().setLocalDateTime(mealDateTimeService.createMealDateTime());
+            }
+            if(meal.getLastReadTime().isActive()) {
+                mealToUpdate.getLastReadTime().setLocalDateTime(mealDateTimeService.createMealDateTime());
             }
             MealListRepository.getInstance().collectionAccess().remove(getMealById(id));
             MealListRepository.getInstance().collectionAccess().add(mealToUpdate);
@@ -102,5 +112,4 @@ public class MealListService {
         mealsToDelete.forEach(m -> deleteMealById(m.getId()));
         return true;
     }
-
 }
